@@ -86,9 +86,9 @@ if(isset($_REQUEST['login'])) {
       <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
           <div class="wrap-login100">
               <form method="post" class="signin-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
+                      <center>
+                             <img src="images/WhiteLogo.png" width="120" height="120"/>
+					  </center>
 
                   <span class="login100-form-title p-b-34 p-t-27">
 						Log in
@@ -127,7 +127,7 @@ if(isset($_REQUEST['login'])) {
   </div>
   <div id="dropDownSelect1"></div>
 
-  <!--===============================================================================================-->
+<!--===============================================================================================--> -->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
