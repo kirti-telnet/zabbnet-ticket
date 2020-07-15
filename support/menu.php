@@ -16,7 +16,6 @@
         <li><a href="ticket.php"><i class="fa fa-bell-o"></i> <span>Ticket</span></a></li>
         <li><a href="setting.php"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
       </ul>
-      
     </section>
     
   </aside>

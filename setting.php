@@ -56,7 +56,7 @@
     <section class="content-header">
       
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Zabbnet</a></li>
         <li class="active">Dashboard</li>
       </ol>
       <br>
@@ -307,7 +307,7 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="ad.js"></script>
+<!-- <script src="ad.js"></script> -->
 </body>
 
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:23 GMT -->
