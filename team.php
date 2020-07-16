@@ -4,9 +4,9 @@
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Ticket</title>
+  <title>Admin Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -58,10 +58,7 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Zabbnet</a></li>
         <li class="active">Team</li>
       </ol>
-      <br>
-    </section>
-    
-    <section class="content">
+      
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -574,11 +571,23 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
+  
+      </div>
+
+      <footer class="main-footer">
+      <?php
+          include('support/footer.php');
+        ?>
+      </footer>
+     
+      
     </section>
+    
+    
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
   
+
   
 
   <!-- Control Sidebar -->
@@ -770,11 +779,7 @@
       <!-- /.tab-pane -->
     </div>
   </aside>
-  <footer class="main-footer">
-       <?php
-          include('support/footer.php');
-        ?>
-  </footer>
+ 
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -825,15 +830,17 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<!-- serach and pagging  -->
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<!-- <script src="dist/js/adminlte.min.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<<script src="dist/js/pages/dashboard.js"></script> -->
 <!-- page script -->
 <script>
   $(function () {
