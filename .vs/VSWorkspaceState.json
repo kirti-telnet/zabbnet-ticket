@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bower_components",
+    "\\bower_components\\datatables.net",
+    "\\bower_components\\datatables.net-bs",
+    "\\bower_components\\datatables.net-bs\\js",
+    "\\bower_components\\datatables.net\\js",
+    "\\pages"
+  ],
+  "SelectedNode": "\\bower_components\\datatables.net-bs\\js\\dataTables.bootstrap.min.js",
+  "PreviewInSolutionExplorer": false
+}

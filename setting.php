@@ -6,7 +6,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Ticket</title>
+  <title>Admin Setting</title>
+  <link rel="shortcut icon" href="images/WhiteLogo.png" type="image/x-icon">
+<link rel="icon" href="images/WhiteLogo.png" type="image/x-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -57,21 +59,25 @@
       
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Zabbnet</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">Setting</li>
       </ol>
       <br>
-      <!-- Main content -->
-      </section>
-    
+     
+      </br>
+              <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+       <!-- /.content-wrapper -->
+       <footer class="main-footer">
+        <?php
+          include('support/footer.php');
+        ?>
+      </footer>
 
     </section>
     <!-- /.content -->
   </div>
-  <footer class="main-footer">
-  <?php
-          include('support/footer.php');
-        ?>
-      </footer>
+  
   
 
   <!-- Control Sidebar -->
@@ -307,7 +313,7 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- <script src="ad.js"></script> -->
+
 </body>
 
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:23 GMT -->

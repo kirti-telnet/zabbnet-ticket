@@ -4,12 +4,15 @@
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Dashboard</title>
+  <title>Admin Team</title>
+  <link rel="shortcut icon" href="images/WhiteLogo.png" type="image/x-icon">
+<link rel="icon" href="images/WhiteLogo.png" type="image/x-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -30,6 +33,20 @@
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  
+  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,16 +66,19 @@
   <?php
     include('support/menu.php');
   ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-     
+      
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Zabbnet</a></li>
         <li class="active">Team</li>
       </ol>
-      
+      <br>
+      <!-- Main content -->
+<section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -122,13 +142,20 @@
         </div>
         <!-- ./col -->
       </div>
+      <!-- /.row -->
+      <!-- Main row -->
       </br>
-    <!-- Main content -->
+              <!-- right col -->
+      
+      <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-
           <div class="box">
+            
+          <!-- /.box -->
+
+          
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
             </div>
@@ -571,23 +598,19 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-  
-      </div>
+    </section>
+      <!-- /.row (main row) -->
+       <!-- /.content-wrapper -->
+       
 
-      <footer class="main-footer">
-      <?php
+    </section>
+    <!-- /.content -->
+  </div>
+  <footer class="main-footer">
+        <?php
           include('support/footer.php');
         ?>
       </footer>
-     
-      
-    </section>
-    
-    
-    <!-- /.content -->
-  </div>
-  
-
   
 
   <!-- Control Sidebar -->
@@ -779,7 +802,6 @@
       <!-- /.tab-pane -->
     </div>
   </aside>
- 
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -797,6 +819,7 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 <!-- Morris.js charts -->
 <script src="bower_components/raphael/raphael.min.js"></script>
 <script src="bower_components/morris.js/morris.min.js"></script>
@@ -824,24 +847,15 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- <script src="ad.js"></script> -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<!-- serach and pagging  -->
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<!-- <script src="dist/js/adminlte.min.js"></script> -->
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<<script src="dist/js/pages/dashboard.js"></script> -->
-<!-- page script -->
 <script>
   $(function () {
     $('#example1').DataTable()
@@ -855,6 +869,7 @@
     })
   })
 </script>
+
 </body>
 
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:23 GMT -->

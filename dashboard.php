@@ -1,3 +1,15 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "zabbnet");
+session_start();
+// if(!isset($_SESSION["register_id"]))
+// {
+//     header("location: signin.php");
+//     exit();
+// }
+
+// print_r($service_detail);
+// die;
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +19,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin Dashboard</title>
+  <link rel="shortcut icon" href="images/WhiteLogo.png" type="image/x-icon">
+<link rel="icon" href="images/WhiteLogo.png" type="image/x-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -313,7 +327,7 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- <script src="ad.js"></script> -->
+
 </body>
 
 <!-- Mirrored from adminlte.io/themes/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jun 2020 09:56:23 GMT -->
