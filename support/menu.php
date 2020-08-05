@@ -11,10 +11,10 @@
         <li class="active treeview">
           
       
-        <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Manage</span></a></li>
-        <li><a href="team.php"><i class="fa fa-bell-o"></i> <span>Team</span></a></li>
-        <li><a href="ticket.php"><i class="fa fa-bell-o"></i> <span>Ticket</span></a></li>
-        <li><a href="setting.php"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
+        <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Manage</span></a></li>
+        <li><a href="team"><i class="fa fa-bell-o"></i> <span>Team</span></a></li>
+        <li><a href="ticket"><i class="fa fa-bell-o"></i> <span>Ticket</span></a></li>
+        <li><a href="setting"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
       </ul>
     </section>
     

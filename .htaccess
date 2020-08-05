@@ -1,0 +1,18 @@
+RewriteEngine on
+
+RewriteRule ^signin signin.php	[NC,L]
+RewriteRule ^signup signup.php	[NC,L]
+RewriteRule ^forgot forgot.php	[NC,L]
+RewriteRule ^signin signin.php	[NC,L]
+RewriteRule ^team team.php   [NC,L]
+RewriteRule ^ticket ticket.php   [NC,L]
+RewriteRule ^setting setting.php   [NC,L]
+RewriteRule ^dashboard dashboard.php   [NC,L]
+RewriteRule ^support/menu menu.php	[NC,L]
+RewriteRule ^support/connection connection.php	[NC,L]
+RewriteRule ^support/footer footer.php	[NC,L]
+RewriteRule ^support/header header.php	[NC,L]
+RewriteRule ^signout signout.php   [NC,L]
+
+
+

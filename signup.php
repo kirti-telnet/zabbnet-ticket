@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
         $sql = "INSERT INTO `registration` (`company_name`,`company_email`,`company_phno`,`country`,`state`,`city`,`password`) 
         VALUES ('$cname','$email','$phno','$coun','$state','$city','$pass')";
         $result = mysqli_query($con,$sql);
-        header("location:signin.php");
+        header("location:signin");
       }
       else{
             echo "<script>alert('Please check your mail, it already exists!');</script>";
@@ -84,44 +84,44 @@ if(isset($_POST['submit'])){
 					</span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Enter companyname">
-                      <input class="input100" type="text"  name="companyname" placeholder="Company Name">
+                      <input class="input100" type="text"  name="companyname" placeholder="Company Name" required="companyname">
                       <span class="focus-input100" data-placeholder="&#xf207;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate = "Enter Email">
-                      <input class="input100" type="email"  name="Email" placeholder="E-mail">
+                      <input class="input100" type="email"  name="Email" placeholder="E-mail" required="Email">
                       <span class="focus-input100" data-placeholder="&#64;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate = "Enter phonenumber">
-                      <input class="input100" type="text"  name="PhoneNo"  maxlength="18" placeholder="Mobile Number">
+                      <input class="input100" type="text"  name="PhoneNo"  maxlength="18" placeholder="Mobile Number" required="PhoneNo">
                       <span class="focus-input100" data-placeholder="&#9990;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate = "Enter countryname">
-                      <input class="input100" type="country"  name="country" placeholder="Country">
+                      <input class="input100" type="country"  name="country" placeholder="Country" required="country">
                       <span class="focus-input100" data-placeholder="&#128743;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate = "Enter statename">
-                      <input class="input100" type="state"  name="state" placeholder="State">
+                      <input class="input100" type="state"  name="state" placeholder="State" required="state">
                       <span class="focus-input100" data-placeholder="&#128754;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate = "Enter cityname">
-                      <input class="input100" type="city"  name="city" placeholder="City">
+                      <input class="input100" type="city"  name="city" placeholder="City" required="city">
                       <span class="focus-input100" data-placeholder="&#128753;"></span>
                   </div>
 
 
                   <div class="wrap-input100 validate-input" data-validate="Enter password">
                       <input class="input100" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" 
-                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder="Password">
+                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  placeholder="Password" required="password">
                       <span class="focus-input100" data-placeholder="&#xf191;"></span>
                   </div>
 
                   <div class="wrap-input100 validate-input" data-validate="Enter password">
-                      <input class="input100" type="password" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder=" Conform Password">
+                      <input class="input100" type="password" name="cpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder=" Conform Password" required="cpassword">
                       <span class="focus-input100" data-placeholder="&#xf191;"></span>
                   </div>
 
@@ -132,7 +132,7 @@ if(isset($_POST['submit'])){
                   </div>
 
                   <div class="text-center p-t-90">
-                      <a class="txt1" href="signin.php" >Already have an account ? Sign In!  </a>
+                      <a class="txt1" href="signin" >Already have an account ? Sign In!  </a>
                   </div>
               </form>
           </div>

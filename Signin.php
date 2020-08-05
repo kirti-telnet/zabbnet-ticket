@@ -1,48 +1,43 @@
 <?php
 session_start();
-error_reporting(0);
 
-if(isset($_REQUEST['login'])) {
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $email1 = $_POST['email'];
-        $pass = $_POST['password'];
 
-        $conn = new mysqli("localhost", "root", "", "zabbnet");
+$con = mysqli_connect("localhost", "root", "", "zabbnet");
 
-        $result_query1 = $conn->query("SELECT * FROM registration WHERE company_email='" . $email1 . "' and password='" . $pass . "'");
-        if ($result_query1->num_rows > 0)
-        {
-            while($row_query1 = $result_query1->fetch_assoc())
-            {
-                $register_id = $row_query1['register_id'];
-                $email = $row_query1['company_email'];
-                echo $email;
-                if (isset($_COOKIE['email'])) {
-                    $_COOKIE['email'] = "";
-                    $_SESSION['email'] = $email;
-                    setcookie('email', $email, time() + (86400), "/");
-//                    $_COOKIE['email'] = $email;
-                    header("location: dashboard.php");
-                } else {
-//          set value for cookie expiry as (86400 * (n)) where n is number of days
-                    $_COOKIE['email'] = "";
-                    setcookie('email', $email, time() + (86400), "/");
-                    $_COOKIE['email'] = $email;
-                    $_SESSION['email'] = $_COOKIE['email'];
-                    header("location: dashboard.php");
-
-                }
-
-            }
-        }
-        else{
-            // $ERROR = "Invalid Credentials";
-            echo "<script>alert('Email or password is incorrect!')</script>";
-            exit();
-            header("location: signin.php");
-        }        
-    }
+if(isset($_COOKIE["type"]))
+{
+ header("location:dashboard");
 }
+
+$message = '';
+
+if(isset($_POST["login"]))
+{
+ if(empty($_POST["email"]) || empty($_POST["password"]))
+ {
+  $message = "<div class='alert alert-danger'>Both Fields are required</div>";
+ }
+ else
+ {
+  $query = "SELECT * FROM registration WHERE company_email='".$_POST['email']."' and password='".$_POST['password']."'";
+
+    $result = $con->query($query);
+  if($result->num_rows > 0)
+  {
+      while ($row = $result->fetch_assoc())
+        {
+        echo "SUCCESS LOGIN";
+        setcookie("type", $row["company_email"], time() + 3600);
+        $_COOKIE['type'] = $row['company_email'];
+        header("location:dashboard");
+        }
+  }
+    else
+    {
+     $message = '<div class="alert alert-danger">Wrong Password or email address</div>';
+    }
+  }
+ }
 ?>
 <html>
   <head>
@@ -93,8 +88,8 @@ if(isset($_REQUEST['login'])) {
                   <span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
-
-                  <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <span><?php echo $message; ?></span>
+                  <div class="wrap-input100 validate-input" data-validate = "Enter email">
                       <input class="input100" type="email"  name="email" placeholder="E-mail">
                       <span class="focus-input100" data-placeholder="&#xf207;"></span>
                   </div>
@@ -112,14 +107,14 @@ if(isset($_REQUEST['login'])) {
                   </div>
 
                   <div class="container-login100-form-btn">
-                      <button class="login100-form-btn" name="login">
+                      <button class="login100-form-btn" name="login" value="login">
                           Login
                       </button>
                   </div>
 
                   <div class="text-center p-t-90">
-                      <a class="txt1" href="forgot.php">Forgot Password?</a>
-                      <br><a class="txt1" href="signup.php" >Don't have an account ? Sign Up ! </a></br>
+                      <a class="txt1" href="forgot">Forgot Password?</a>
+                      <br><a class="txt1" href="signup" >Don't have an account ? Sign Up ! </a></br>
                   
               </form>
           </div>

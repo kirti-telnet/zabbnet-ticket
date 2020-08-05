@@ -22,14 +22,14 @@ if(isset($_REQUEST['sub'])) {
                     $_SESSION['email'] = $email;
                     setcookie('email', $email, time() + (86400), "/");
 //                    $_COOKIE['email'] = $email;
-                    header("location: index.php");
+                    header("#");
                 } else {
 //          set value for cookie expiry as (86400 * (n)) where n is number of days
                     $_COOKIE['email'] = "";
                     setcookie('email', $email, time() + (86400), "/");
                     $_COOKIE['email'] = $email;
                     $_SESSION['email'] = $_COOKIE['email'];
-                    header("location: index.php");
+                    header("#");
 
                 }
 
@@ -39,7 +39,7 @@ if(isset($_REQUEST['sub'])) {
             // $ERROR = "Invalid Credentials";
             echo "<script>alert('Email or password is incorrect!')</script>";
             exit();
-            header("location: signin.php");
+            header("location: signin");
         }        
     }
 }
@@ -99,9 +99,6 @@ if(isset($_REQUEST['sub'])) {
                       <span class="focus-input100" data-placeholder="&#xf207;"></span>
                   </div>
 
-                 
-                  
-
                   <div class="container-login100-form-btn">
                       <button class="login100-form-btn" name="sub">
                           Submit
@@ -109,8 +106,8 @@ if(isset($_REQUEST['sub'])) {
                   </div>
 
                   <div class="text-center p-t-90">
-                      <a class="txt1" href="signin.php">Already have an account ? Sign In!</a>
-                      <br><a class="txt1" href="signup.php" >Don't have an account ? Sign Up ! </a></br>
+                      <a class="txt1" href="signin">Already have an account ? Sign In!</a>
+                      <br><a class="txt1" href="signup" >Don't have an account ? Sign Up ! </a></br>
                   
               </form>
           </div>
@@ -135,9 +132,5 @@ if(isset($_REQUEST['sub'])) {
 <!--===============================================================================================-->
   <script src="js/main.js"></script>
 
- 
-<!-- <?php
-   include('includes/cfooter.php');
-?> -->
   </body>
 </html>

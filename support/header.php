@@ -1,3 +1,6 @@
+<?php
+    include('support/connection.php');
+  ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -221,42 +224,40 @@
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style=" width: 44px; height: 50px;">
+              <img src="images/admin.jpg" class="user-image" alt="User Image"/>
               
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="images/admin.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                <?php
+                $select = mysqli_query($con, "SELECT *  from registration where company_email = '" . $_COOKIE['type'] . "'");
+					  while ($row = mysqli_fetch_assoc($select)) {
+				  // print_r($row);
+				  ?>
+				  <tr>
+          <?php echo $row["company_name"]."<br>";
+          echo $row["company_email"]; ?>
+				 </tr>
+				<?php
+                          }
+
+
+                ?>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="signin.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="signout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
