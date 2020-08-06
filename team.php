@@ -1,4 +1,39 @@
+<?php
+$con = mysqli_connect("localhost","root","","zabbnet");
 
+if(isset($_POST['submit'])){
+    print_r($_POST);
+   
+    $eid = $_REQUEST['eid'];
+    $designation = $_REQUEST['designation'];
+    $ename = $_REQUEST['ename'];
+    $email = $_REQUEST['email'];
+    $pass = $_REQUEST['password'];
+    $confpass=$_REQUEST['cpassword'];
+    
+    $verify_mail=mysqli_query($con,"SELECT user_email from `user_master` where `user_email`='$email'");
+        $getmail=mysqli_fetch_array($verify_mail);
+         
+
+     if($getmail!=$email){ // check mail in db
+        $cemail = $_COOKIE['type'];
+        $sql = "INSERT INTO `user_master` (`company_email`,`employee_id`,`role_id`,`user_name`,`user_email`,`user_password`) 
+          VALUES ('$cemail','$eid','$designation','$ename','$email','$pass')";
+          
+          if(!mysqli_query($con,$sql))
+          {
+             die('ERROR:'.mysqli_error($con));
+          }
+          else {
+            header("location:team");
+          }
+          echo $sql;
+        }
+        else{
+            echo "<script>alert('Please check your mail, it already exists!');</script>";
+        }
+      }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -75,7 +110,61 @@
     <section class="content-header">
       <ol class="breadcrumb">
       <!-- data-toggle="modal" data-target="#myModal -->
-      <li><i><a href="popup.php" class="fa fa-plus">Add Employee</a></i></li>
+      <!-- popup for employee signup  -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <form  method="post" name="reg_form" enctype="multipart/form-data" class="form" action="team">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3 class="modal-title" align="center">Registration Employee</h3>
+          </div>
+          <div class="modal-body">
+            <!-- <form  method="get" name="reg_form" enctype="multipart/form-data" class="form"> -->
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="eid" placeholder="Employee Id" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <select  name="designation" class="form-control" onChange="getState(this.value)" id="role_id"  required>
+                            <option value=""> Select User Designation</option>
+                            <?php
+                            $query1 = "SELECT * FROM role";
+                            $result1 = mysqli_query($con,$query1);
+                            while($row1 = mysqli_fetch_array($result1)){
+                                ?>
+                                <option value=<?php echo $row1['role_id']; ?>> <?php echo $row1['role_name']; ?>																	   							</option>
+                            <?php }?>
+                </select>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="ename" placeholder="Full name" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="cpassword" placeholder="Retype password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+              </div>
+            <!-- </form> -->
+          </div>
+          <div class="modal-footer">
+            <input type="submit" name="submit" value="Add"></input>
+          </div>
+            </form>
+          </div>
+        </div>
+        </div>  
+      <li><i><a href="#" class="fa fa-plus"x  data-toggle="modal" data-target="#myModal">Add Employee</a></i></li>
       <li><a href="dashboard"><i class="fa fa-dashboard"></i> Zabbnet</a></li>
       <li class="active">Team</li>
       </ol>
@@ -177,23 +266,22 @@
                 </tr>
                 </thead>
                 <tbody>             
-                <tr>
                 <?php
                     $select = mysqli_query($con, "select * from user_master where role_id");
                     $i = 1;
                     while ($row = mysqli_fetch_assoc($select)) {
                         ?>
-                  
+                  <tr>       
                   <td><?php echo $row["employee_id"]; ?></td>
                   <td><?php echo $row["role_id"]; ?></td>
                   <td><?php echo $row["user_name"];?></td>
                   <td><?php echo $row["user_email"];?></td>
                   <td><?php echo $row["user_password"];?></td>
+                  </tr>
                   <?php
                    $i++;
                   }
                 ?>
-                </tr>
                 </tbody>
                 <tfoot>
                 <tr>
