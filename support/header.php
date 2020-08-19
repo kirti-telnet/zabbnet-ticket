@@ -1,18 +1,17 @@
-
 <?php
     include('support/connection.php');
-  ?>
+    setcookie("type", $_COOKIE["type"], time() + 300);
+?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
   <header class="main-header">
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b> 
-      <center >
-            <img class="sidebar" src="images/WhiteLogo.png" width="80" height="80"/>
-      </center>Zabbnet</b>
+        <center >
+              <img class="sidebar" src="images/WhiteLogo.png" width="80" height="80"/>
+        </center>Zabbnet</b>
       </span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Zabbnet</b></span>
@@ -23,7 +22,6 @@
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
-
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
@@ -226,32 +224,26 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style=" width: 44px; height: 50px;">
-              <img src="images/admin.jpg" class="user-image" alt="User Image"/>
-              
+              <img src="images/admin.jpg" class="user-image" alt="User Image"/> 
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="images/admin.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                <?php
-                $select = mysqli_query($con, "SELECT *  from registration where company_email = '" . $_COOKIE['type'] . "'");
-					  while ($row = mysqli_fetch_assoc($select)) {
-				  // print_r($row);
-				  ?>
-				  <tr>
-          <?php echo $row["company_name"]."<br>";
-          echo $row["company_email"]; ?>
-				 </tr>
-				<?php
+                  <p>
+                      <?php
+                        $select = mysqli_query($con, "SELECT *  from registration where 
+                                              company_email = '" . $_COOKIE['type'] . "'");
+                          while ($row = mysqli_fetch_assoc($select)) {
+                          ?>
+                          <tr>
+                          <?php echo $row["company_name"]."<br>".$row["company_email"];?>
+                          </tr>
+                          <?php
                           }
-
-
-                ?>
-                </p>
+                      ?>
+                  </p>
               </li>
-              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">

@@ -1,9 +1,6 @@
 <?php
-//logout.php.
-session_start();
-session_destroy();
-setcookie("type", "", time()-3600);
-
-header("location:signin");
-
+	session_start();
+	session_destroy();
+	setcookie("type", "", time()-3600);
+	header("location:signin");
 ?>
